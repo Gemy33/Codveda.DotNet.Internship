@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Services", "StudentManagement.Services\StudentManagement.Services.csproj", "{F0BD07B4-DB1A-4A5C-819C-A469413B28CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level1.CSharpOOP", "Level1.CSharpOOP", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A57ACB42-3DBD-4F50-A5E5-8EF38A0F6144} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1BDD7EA0-A950-44B7-A9A9-1714F61C80CC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F0BD07B4-DB1A-4A5C-819C-A469413B28CA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFAAA2C9-629A-4ED1-B0C0-1AEA90781663}
