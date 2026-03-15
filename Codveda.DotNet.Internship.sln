@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level1.CSharpOOP", "Level1.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level1.ExceptionHandling", "Level1.ExceptionHandling", "{1C26074A-3FC8-40A7-9205-00E56E69DF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingDemo", "ExceptionHandlingDemo\ExceptionHandlingDemo.csproj", "{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level1-ExceptionHandlingDemo", "ExceptionHandlingDemo\Level1-ExceptionHandlingDemo.csproj", "{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
