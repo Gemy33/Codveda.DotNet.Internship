@@ -10,7 +10,7 @@ namespace Level1_CSharp_OOP_StudentManagement_Codvead
         {
             StudentService service = new StudentService();
 
-            Console.WriteLine("Student Management Codvead C# - OOP");
+            Console.WriteLine("Student Management Codveda C# - OOP");
             while (true)
             {
                 Console.WriteLine("1. Add Student");

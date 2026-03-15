@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36930.0 d17.14
+VisualStudioVersion = 17.14.36930.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level1-CSharp-OOP-StudentManagement-Codvead", "Level1-CSharp-OOP-StudentManagement-Codvead\Level1-CSharp-OOP-StudentManagement-Codvead.csproj", "{A57ACB42-3DBD-4F50-A5E5-8EF38A0F6144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level1-CSharp-OOP-StudentManagement-Codveda", "Level1-CSharp-OOP-StudentManagement-Codvead\Level1-CSharp-OOP-StudentManagement-Codveda.csproj", "{A57ACB42-3DBD-4F50-A5E5-8EF38A0F6144}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Models", "StudentManagement.Models\StudentManagement.Models.csproj", "{1BDD7EA0-A950-44B7-A9A9-1714F61C80CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Services", "StudentManagement.Services\StudentManagement.Services.csproj", "{F0BD07B4-DB1A-4A5C-819C-A469413B28CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level1.CSharpOOP", "Level1.CSharpOOP", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level1.ExceptionHandling", "Level1.ExceptionHandling", "{1C26074A-3FC8-40A7-9205-00E56E69DF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingDemo", "ExceptionHandlingDemo\ExceptionHandlingDemo.csproj", "{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 		{F0BD07B4-DB1A-4A5C-819C-A469413B28CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0BD07B4-DB1A-4A5C-819C-A469413B28CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0BD07B4-DB1A-4A5C-819C-A469413B28CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 		{A57ACB42-3DBD-4F50-A5E5-8EF38A0F6144} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{1BDD7EA0-A950-44B7-A9A9-1714F61C80CC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F0BD07B4-DB1A-4A5C-819C-A469413B28CA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FDFEA45D-72B7-466C-9DB0-AA9B8929E5FF} = {1C26074A-3FC8-40A7-9205-00E56E69DF19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFAAA2C9-629A-4ED1-B0C0-1AEA90781663}
