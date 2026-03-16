@@ -1,0 +1,51 @@
+﻿@* Views/Home/Contact.cshtml
+   Demonstrates: Razor form, Tag Helpers, client + server validation *@
+
+@model ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+
+        <h1 class="mb-4"><i class="bi bi-envelope me-2 text-primary"></i>Contact Us</h1>
+
+        @* asp-action / asp-controller Tag Helpers generate the correct form action URL *@
+        <form asp-action="Contact" asp-controller="Home" method="post">
+            @* Anti-forgery token hidden field (CSRF protection) *@
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                @* asp-for generates id, name, and links to validation *@
+                <label asp-for="Name" class="form-label fw-semibold"></label>
+                <input asp-for="Name" class="form-control" placeholder="Your full name" />
+                @* asp-validation-for renders the error message for this field *@
+                <span asp-validation-for="Name" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-semibold"></label>
+                <input asp-for="Email" class="form-control" placeholder="you@example.com" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Message" class="form-label fw-semibold"></label>
+                <textarea asp-for="Message" class="form-control" rows="5"
+                          placeholder="Write your message here..."></textarea>
+                <span asp-validation-for="Message" class="text-danger small"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-send me-1"></i>Send Message
+            </button>
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    @* Client-side validation (jQuery Unobtrusive Validation) *@
+    <partial name="_ValidationScriptsPartial" />
+}

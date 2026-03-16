@@ -1,0 +1,120 @@
+﻿@* ============================================================
+   Views/Home/Index.cshtml
+   Home page — receives HomeViewModel from HomeController.
+   Demonstrates: @model, @foreach, conditional rendering,
+   tag helpers (asp-controller, asp-action).
+   ============================================================ *@
+
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- ── Hero Section ──────────────────────────────────────── -->
+<div class="p-5 mb-4 bg-primary text-white rounded-3 shadow">
+    <div class="container-fluid py-2">
+        <h1 class="display-5 fw-bold">
+            <i class="bi bi-code-slash me-2"></i>@Model.WelcomeMessage
+        </h1>
+        <p class="col-md-8 fs-5">
+            A full-featured ASP.NET Core MVC application demonstrating
+            Controllers, Razor Views, Models, DI, and Middleware.
+        </p>
+        <a asp-controller="Product" asp-action="Index"
+           class="btn btn-light btn-lg me-2">
+            <i class="bi bi-box-seam me-1"></i>Browse Products
+        </a>
+        <a asp-controller="Product" asp-action="Create"
+           class="btn btn-outline-light btn-lg">
+            <i class="bi bi-plus-circle me-1"></i>Add Product
+        </a>
+    </div>
+</div>
+
+<!-- ── Stats Cards ───────────────────────────────────────── -->
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card text-center border-0 shadow-sm h-100">
+            <div class="card-body py-4">
+                <i class="bi bi-box-seam display-4 text-primary"></i>
+                <h2 class="display-6 fw-bold mt-2">@Model.TotalProducts</h2>
+                <p class="text-muted mb-0">Total Products</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center border-0 shadow-sm h-100">
+            <div class="card-body py-4">
+                <i class="bi bi-tags display-4 text-success"></i>
+                <h2 class="display-6 fw-bold mt-2">@Model.TotalCategories</h2>
+                <p class="text-muted mb-0">Categories</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center border-0 shadow-sm h-100">
+            <div class="card-body py-4">
+                <i class="bi bi-layers display-4 text-warning"></i>
+                <h2 class="display-6 fw-bold mt-2">.NET 9</h2>
+                <p class="text-muted mb-0">Powered By</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Featured Products ─────────────────────────────────── -->
+<h2 class="mb-3"><i class="bi bi-star me-2 text-warning"></i>Featured Products</h2>
+
+@* Razor @foreach — iterates the model collection *@
+<div class="row g-4">
+    @foreach (var product in Model.FeaturedProducts)
+    {
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <span class="badge bg-light text-primary">@product.Category</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text text-muted">@product.Description</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-success fs-5">@product.Price.ToString("C")</span>
+
+                    @* Razor conditional — IsAvailable is a computed property *@
+                    @if (product.IsAvailable)
+                    {
+                        <span class="badge bg-success">
+                            <i class="bi bi-check-circle me-1"></i>In Stock (@product.Stock)
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">
+                            <i class="bi bi-x-circle me-1"></i>Out of Stock
+                        </span>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    @* Tag Helper: asp-controller / asp-action / asp-route-id *@
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id"
+                       class="btn btn-outline-primary btn-sm w-100">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- ── Categories ────────────────────────────────────────── -->
+<h2 class="mt-5 mb-3"><i class="bi bi-tags me-2 text-success"></i>Shop by Category</h2>
+<div class="d-flex flex-wrap gap-2">
+    @foreach (var cat in Model.Categories)
+    {
+        <a asp-controller="Product" asp-action="Index" asp-route-category="@cat"
+           class="btn btn-outline-secondary">
+            <i class="bi bi-tag me-1"></i>@cat
+        </a>
+    }
+</div>

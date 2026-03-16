@@ -1,0 +1,62 @@
+﻿@* Views/Home/About.cshtml *@
+@{
+    ViewData["Title"] = "About";
+    
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="mb-3"><i class="bi bi-info-circle me-2 text-primary"></i>@ViewBag.Title</h1>
+        <p class="lead">@ViewBag.Description</p>
+
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Technologies Used</h5>
+                <p class="card-text text-muted">@ViewData["Tech"]</p>
+            </div>
+        </div>
+
+        <h4>MVC Architecture Explained</h4>
+        <div class="row g-3 mt-1">
+            <div class="col-md-4">
+                <div class="card border-primary border-2 h-100">
+                    <div class="card-header bg-primary text-white fw-bold">Model</div>
+                    <div class="card-body small">
+                        Represents data and business rules.
+                        Examples: <code>Product</code>, <code>HomeViewModel</code>.
+                        Contains validation attributes.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-success border-2 h-100">
+                    <div class="card-header bg-success text-white fw-bold">View</div>
+                    <div class="card-body small">
+                        Razor <code>.cshtml</code> files that render HTML.
+                        Receives data from the Controller.
+                        Uses <code>@@model</code>, <code>@@foreach</code>, Tag Helpers.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-warning border-2 h-100">
+                    <div class="card-header bg-warning fw-bold">Controller</div>
+                    <div class="card-body small">
+                        Handles HTTP requests. Calls services,
+                        passes data to Views, returns
+                        <code>IActionResult</code>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary me-2">
+                <i class="bi bi-box-seam me-1"></i>View Products
+            </a>
+            <a asp-controller="Home" asp-action="Contact" class="btn btn-outline-secondary">
+                <i class="bi bi-envelope me-1"></i>Contact Us
+            </a>
+        </div>
+    </div>
+</div>

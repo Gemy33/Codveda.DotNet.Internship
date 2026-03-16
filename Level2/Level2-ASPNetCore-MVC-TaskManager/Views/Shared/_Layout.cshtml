@@ -1,0 +1,110 @@
+﻿@*
+  Views/Shared/_Layout.cshtml
+  The master layout — all pages inherit this.
+  Razor syntax: @{ } for code blocks, @expression for output,
+  @RenderBody() injects child page content.
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Codveda Store</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <!-- ── Navigation Bar ──────────────────────────────── -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                <i class="bi bi-code-slash me-1"></i> Codveda Store
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            <i class="bi bi-house me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Product" asp-action="Index">
+                            <i class="bi bi-box-seam me-1"></i>Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Product" asp-action="Create">
+                            <i class="bi bi-plus-circle me-1"></i>Add Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="About">
+                            <i class="bi bi-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contact">
+                            <i class="bi bi-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                </ul>
+                <span class="navbar-text text-white-50 small">
+                    Codveda Internship · Level 2
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Flash messages (TempData) ───────────────────── -->
+    <div class="container mt-3">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+    </div>
+
+    <!-- ── Main Content ─────────────────────────────────── -->
+    <main class="container my-4">
+        @RenderBody()
+    </main>
+
+    <!-- ── Footer ───────────────────────────────────────── -->
+    <footer class="bg-dark text-white-50 py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-1">
+                <strong class="text-white">Codveda Technology</strong> ·
+                ASP.NET Core MVC Internship Project
+            </p>
+            <p class="small mb-0">
+                Built with <i class="bi bi-heart-fill text-danger"></i> using
+                .NET 9 · MVC · Razor · DI · Middleware
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    @* RenderSection: optional scripts section from child pages *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
