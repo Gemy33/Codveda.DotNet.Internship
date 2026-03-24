@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level2-ASPNetCore-MVC-TaskM
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level2", "Level2", "{F3F5FE62-CDF6-4A58-8EB5-55C7CE8CA2B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2_AsyncMultithreading", "Level3\Task2_AsyncMultithreading\Task2_AsyncMultithreading.csproj", "{73D27701-7419-4634-8E1F-E1E26E7AC3BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{777A81E9-C43F-4B47-A286-004A86FF77FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{777A81E9-C43F-4B47-A286-004A86FF77FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{777A81E9-C43F-4B47-A286-004A86FF77FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D27701-7419-4634-8E1F-E1E26E7AC3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D27701-7419-4634-8E1F-E1E26E7AC3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D27701-7419-4634-8E1F-E1E26E7AC3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D27701-7419-4634-8E1F-E1E26E7AC3BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
